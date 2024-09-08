@@ -1,0 +1,207 @@
+TASK:1
+
+Exercise :1
+
+class  Exer1
+{
+	public static void main(String[] args) 
+	{
+		int[] numbers={1,2,3,4,5};
+		for (int i=0;i<numbers.length;i++)
+		{
+		System.out.println(numbers[i]);
+		}
+	
+	}
+}
+/*
+the error is Incorrect loop condition: The loop condition i <= numbers.length is incorrect. 
+The last valid index of the array is numbers.length - 1. When i becomes equal to numbers.length,
+you're trying to access an element that doesn't exist, causing the exception.*/
+
+
+
+Exercise:2
+
+
+class  Car
+{
+	private String make;
+	private String model;
+	public Car(String make,String model){
+		this.make=make;
+		this.model=model;
+
+	}
+	public void start(){
+		System.out.println("starting the car");
+	}
+	 public void stop() {
+        System.out.println("stopping the car");
+    }
+}
+
+
+
+class Main
+{
+	public static void main(String[] args) 
+	{
+		Car car=new Car ("Toyoto","camry");
+		car.start();
+		car.stop();
+
+	}
+}
+
+/*the error is
+No stop() method: The Car class doesn't have a stop() method defined.
+Therefore, when you try to call it in the main method, it will throw a NullPointerException*/
+
+
+
+Exercise:3
+
+class Exeption {
+    public static void main(String[] args) {
+        // ... other code ...
+
+        try {
+            int result = divide(10, 0);
+            System.out.println("Result: " + result);
+        } catch (ArithmeticException e) {
+            System.out.println("Division by zero");
+        }
+    }
+
+    public static int divide(int a, int b) {
+        try {
+            return a / b;
+        } catch (ArithmeticException e) {
+            System.out.println("Division by zero in divide() method");
+            return 0; // Or handle the exception in another way
+        }
+    }
+}
+
+
+
+/*Correct array index handling: The try-catch block correctly handles the ArrayIndexOutOfBoundsException that would occur if you tried to access an element outside the array's bounds.
+Incorrect division by zero handling: However, the divide() method doesn't handle the potential ArithmeticException that can occur when dividing by zero.
+To correct this issue, you need to add a try-catch block around the division operation in the divide() method:
+
+*/
+
+
+Exercise:4
+
+class Fiba {
+    public static int fibonacci(int n) {
+        if (n <= 1) {
+            return n;
+        } else {
+            return fibonacci(n - 1) + fibonacci(n - 2);
+        }
+    }
+
+    public static void main(String[] args) {
+        int n = 6;
+        int result = fibonacci(n);
+        System.out.println("The Fibonacci number at position " + n + " is: " + result);
+    }
+}
+
+/*The bug in the code is a typo in the function name. 
+The function is named fibanacci instead of fibonacci. This misspelling will prevent the
+function from being called correctly, leading to a compilation error.08-09-2024
+*/
+
+
+Exercise :5
+
+
+import java.util.*;
+
+class Prime {
+    public static List<Integer> findPrimes(int n) {
+        List<Integer> primes = new ArrayList<>();
+        for (int i = 2; i <= n; i++) {
+            boolean isPrime = true;
+            for (int j = 2; j < i; j++) {
+                if (i % j == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+            if (isPrime) {
+                primes.add(i);
+            }
+        }
+        return primes;
+    }
+
+    public static void main(String[] args) {
+        int n = 20;
+        List<Integer> primeNumbers = findPrimes(n);
+        System.out.println("Prime numbers up to " + n + ": " + primeNumbers);
+    }
+}
+
+/*
+The bug in the code is that the List<integer> declaration should use lowercase Integer instead of uppercase integer. 
+Java is case-sensitive, 
+and Integer is the wrapper class for primitive int values*/
+
+This is about the task 1
+
+
+
+TASK:2
+
+
+Java OOPs Concepts
+In this page, we will learn about the basics of OOPs. Object-Oriented Programming is a paradigm that provides many concepts, such as inheritance, data binding, polymorphism, etc.
+
+
+
+OOPs (Object-Oriented Programming System)
+Object means a real-world entity such as a pen, chair, table, computer, watch, etc. Object-Oriented Programming is a methodology or paradigm to design a program using classes and objects. It simplifies software development and maintenance by providing some concepts:
+
+
+OBJECT:
+Any entity that has state and behavior is known as an object. For example, a chair, pen, table, keyboard, bike, etc. It can be physical or logical.
+An Object can be defined as an instance of a class. An object contains an address and takes up some space in memory. Objects can communicate without knowing the details of each other's data or code. The only necessary thing is the type of message accepted and the type of response returned by the objects.
+Class
+Collection of objects is called class. It is a logical entity.
+A class can also be defined as a blueprint from which you can create an individual object. Class doesn't consume any space.
+Inheritance
+When one object acquires all the properties and behaviors of a parent object, it is known as inheritance. It provides code reusability. It is used to achieve runtime polymorphism.
+Polymorphism
+If one task is performed in different ways, it is known as polymorphism. For example: to convince the customer differently, to draw something, for example, shape, triangle, rectangle, etc.
+In Java, we use method overloading and method overriding to achieve polymorphism.
+Another example can be to speak something; for example, a cat speaks meow, dog barks woof, etc.
+
+
+Abstraction
+Hiding internal details and showing functionality is known as abstraction. For example phone call, we don't know the internal processing.
+In Java, we use abstract class and interface to achieve abstraction.
+Encapsulation
+Binding (or wrapping) code and data together into a single unit are known as encapsulation. For example, a capsule, it is wrapped with different medicines.
+A java class is the example of encapsulation. Java bean is the fully encapsulated class because all the data members are private here.
+
+
+This is bout the oops concept in java
+Introduction:
+Java is a class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible. It is intended to let application developers write once, and run anywhere (WORA), meaning that compiled Java code can run on all platforms that support Java without the need for recompilation. Java was first released in 1995 and is widely used for developing applications for desktop, web, and mobile devices. Java is known for its simplicity, robustness, and security features, making it a popular choice for enterprise-level applications.History of Java
+Java’s history is as interesting as it is impactful. The journey of this powerful programming language began in 1991 when James Gosling, Mike Sheridan, and Patrick Naughton, a team of engineers at Sun Microsystems known as the “Green Team,” set out to create a new language initially called “Oak.” Oak was later renamed Java, inspired by Java coffee, and was first publicly released in 1996 as Java 1.0. This initial version provided a no-cost runtime environment across popular platforms, making it accessible to a broad audience. Arthur Van Hoff rewrote the Java 1.0 compiler to strictly comply with its specifications, ensuring its reliability and cross-platform capabilities.
+
+
+Java evolved over time, with Java 2 introducing multiple configurations tailored for different platforms, showcasing its versatility.
+In 1997, Sun Microsystems aimed to formalize Java through the ISO standards body but eventually withdrew from the process.
+Despite not formalizing through ISO, Sun Microsystems offered most Java implementations at no cost, earning revenue by licensing specialized products such as the Java Enterprise System.
+A significant milestone in Java’s history occurred on November 13, 2006, when Sun Microsystems released a large portion of the Java Virtual Machine (JVM) as free, open-source software.
+By May 8, 2007, the core JVM code was fully available under open-source distribution terms.
+
+
+
+
